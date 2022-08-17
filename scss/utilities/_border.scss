@@ -1,0 +1,45 @@
+.u-border-round{
+  border-radius: $border-radius;
+  &--top{
+    border-radius: $border-radius $border-radius 0px 0px;
+  }
+  &--bottom{
+    border-radius: 0px 0px $border-radius $border-radius;
+  }
+}
+.u-border-dashed{
+  border:$border-width dashed $border-color;
+  &--top{
+    border-top:$border-width dashed $border-color;
+  }
+  &--right{
+    border--right:$border-width dashed $border-color;
+  }
+  &--bottom{
+    border-bottom:$border-width dashed $border-color;
+  }
+  &--left{
+    border-left:$border-width dashed $border-color;
+  }
+  &--thick{
+    border-width:$border-width*2;
+  }
+}
+.u-border{
+  border:$border-width solid $border-color;
+  &--top{
+    border-top:$border-width solid $border-color;
+  }
+  &--right{
+    border--right:$border-width solid $border-color;
+  }
+  &--bottom{
+    border-bottom:$border-width solid $border-color;
+  }
+  &--left{
+    border-left:$border-width solid $border-color;
+  }
+  &--thick{
+    border-width:$border-width*2;
+  }
+}

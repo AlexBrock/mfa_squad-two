@@ -1,0 +1,36 @@
+.u-flex {
+  display: flex;
+}
+.u-split {
+  justify-content: space-between;
+}
+.u-center {
+  align-items: center;
+}
+.u-center-v {
+  justify-content: center;
+}
+.u-start {
+  align-items: flex-start;
+}
+.u-end {
+  align-items: flex-end;
+}
+.u-stretch {
+  align-items: stretch;
+}
+.u-separate-v {
+  align-items: space-between;
+}
+.u-around {
+  justify-content: space-around;
+}
+.u-baseline {
+  align-items: baseline;
+}
+.u-column {
+  flex-direction: column;
+}
+.u-row {
+  flex-direction: row;
+}

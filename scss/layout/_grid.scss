@@ -1,0 +1,54 @@
+$mainCount: 1;
+@while $mainCount <= $column-count {
+	.l-col-#{$mainCount} {
+		@include media('tablet') {
+			padding-left:$spacing--xs;
+			padding-right:$spacing--xs;
+		}
+		@include media('desktop') {
+			padding-left:$spacing--sm;
+			padding-right:$spacing--sm;
+		}
+		float:left;
+		padding-left:$spacing--xxs;
+		padding-right:$spacing--xxs;
+		width: 100 / $column-count * $mainCount + %;
+	}
+	$mainCount: $mainCount + 1;
+}
+
+$tabletCount: 1;
+@while $tabletCount <= $column-count {
+	.l-col-#{$tabletCount}--tablet {
+		@include media('tablet-only') {
+			width: 100 / $column-count * $tabletCount + %;
+		}
+	}
+	$tabletCount: $tabletCount + 1;
+}
+
+$mobileCount: 1;
+@while $mobileCount <= $column-count {
+	.l-col-#{$mobileCount}--mobile {
+		@include media('mobile-only') {
+			width: 100 / $column-count * $mobileCount + %;
+		}
+	}
+	$mobileCount: $mobileCount + 1;
+}
+
+
+.l-row{
+	display:block;
+	margin-left:-$spacing--xxs;
+	margin-right:-$spacing--xxs;
+	@include media('tablet') {
+		margin-left:-$spacing--xs;
+		margin-right:-$spacing--xs;
+	}
+	@include media('desktop') {
+		margin-left:-$spacing--sm;
+		margin-right:-$spacing--sm;
+	}
+	@include clearfix;
+}

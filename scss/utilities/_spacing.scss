@@ -1,0 +1,76 @@
+$spacings : (
+	''			: $spacing,
+	'--xl' 		: $spacing--xl,
+	'--md' 		: $spacing--md,
+	'--sm' 		: $spacing--sm,
+	'--xs' 		: $spacing--xs,
+	'--xxs' 	: $spacing--xxs,
+	'--null'	: 0px
+);
+
+@each $size, $spacing in $spacings{ 
+	.u-pad#{$size} {
+		padding: $spacing !important;
+	}
+
+	.u-pad-x#{$size} {
+		padding-left: $spacing !important;
+		padding-right: $spacing !important;
+	}
+	.u-pad-y#{$size} {
+		padding-top: $spacing !important;
+		padding-bottom: $spacing !important;
+	}
+
+	.u-pad-top#{$size} {
+		padding-top: $spacing !important;
+	}
+	.u-pad-right#{$size} {
+		padding-right: $spacing !important;
+	}
+	.u-pad-bottom#{$size} {
+		padding-bottom: $spacing !important;
+	}
+	.u-pad-left#{$size} {
+		padding-left: $spacing !important;
+	}
+}
+
+@each $size, $spacing in $spacings{ 
+	.u-margin#{$size} {
+		margin: $spacing !important;
+	}
+
+	.u-margin-x#{$size} {
+		margin-left: $spacing !important;
+		margin-right: $spacing !important;
+	}
+	.u-margin-y#{$size} {
+		margin-top: $spacing !important;
+		margin-bottom: $spacing !important;
+	}
+
+	.u-margin-top#{$size} {
+		margin-top: $spacing !important;
+	}
+	.u-margin-right#{$size} {
+		margin-right: $spacing !important;
+	}
+	.u-margin-bottom#{$size} {
+		margin-bottom: $spacing !important;
+	}
+	.u-margin-left#{$size} {
+		margin-left: $spacing !important;
+	}
+}
+
+.u-vertical-distance{
+	margin-bottom:$spacing;
+	@include media('tablet-only') {
+		margin-bottom:$spacing--md;
+	}
+	@include media('mobile-only') {
+		margin-bottom:$spacing--sm;
+	}
+}
+
