@@ -1,0 +1,32 @@
+.main{
+	padding:$spacing;
+}
+.main-title{
+	font-weight:bold;
+	font-size:3em;
+	text-align:center;
+	margin-bottom:$spacing*2;
+}
+.mfa-card{
+	border:1px solid $borderColor;
+	border-radius:$borderRadius;
+	padding:$spacing;
+
+	&__title{
+		font-weight:bold;
+		color:$primaryBlue;
+		font-weight:bold;
+		margin-bottom:$spacing*0.5;
+	}
+	&__info{
+		margin-bottom:$spacing;
+	}
+	&__cta{
+		background:$primaryBlue;
+		color:#ffffff;
+		font-weight:bold;
+		padding:$spacing*0.5 $spacing;
+		border:0px;
+		border-radius:$borderRadius;
+	}
+}

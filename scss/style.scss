@@ -1,72 +1,31 @@
-// XPress stylesheet. 
-// Goals:
-// - max width: 1200px with 24px gutters (8px on mobile, 16px on tablet)
-// - 12 col grid system (http://materializecss.com/grid.html)
-// 		- small
-//		- medium
-//		- large
-// - 24px base spacing going down to 12px mobile (use rem)
-// - media queries:
-//		- 0 - 599: mobile (max-width:599px - mobile ONLY)
-//		- 600 - 959: tablet (min-width: 600px - tablet up, min-width: 600px & max-width:959px - tablet ONLY)
-//		- 960+ desktop (min-width:960 - desktop up)
-// - structure: (https://medium.com/@jordankoschei/how-i-shrank-my-css-by-84kb-by-refactoring-with-itcss-2e8dafee123a#.azb1yr9wp)
-//		- Settings: Variables and other settings
-// 		- Tools: Custom functions and mixins
-// 		- Base: Font-face, box-sizing, normalize, etc.
-// 		- Elements: Bare element defaults like headings and links - unclassed
-// 		- Layout: Layout and structure classes (grids, rows, containers)
-// 		- Components: Individual components (header, nav, cards, carousels etc)
-// 		- Utilities: Helpers, overrides, explicit classes (only place to have !important)
-// - Obviously BEM
-// - Line height - 1.25
-// - Rem for spacing, em for fonts
-// - utilities for flexbox and fallbacks for IE (see live site method)
+// sass-lint:disable quotes
+// ITCSS https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
 
+// *-* settings *-*
+//		> Variables for colors, spacing, fonts etc.
+@import 'settings/settings';
 
-// media queries: (http://babich.biz/responsive-design-best-practices/) - http://include-media.com/ (https://davidwalsh.name/sass-media-query)
+// *-* tools *-*
+//		> Mixins and functions
+@import 'tools/tools';
 
-@import "normalize";
-@import 'tools/rem';
-@import 'settings/variables';
-@import 'tools/media-queries';
-@import 'tools/clearfix';
-@import 'tools/text-overflow';
-@import 'base/resets';
-@import 'base/base';
-// @import 'elements/headings';
-// @import 'elements/links';
-// @import 'elements/forms';
-// @import 'elements/buttons';
-@import 'layout/grid';
-@import 'layout/containers';
-// @import 'components/nav';
-// @import 'components/footer';
-// @import 'components/card';
-@import 'utilities/color';
-@import 'utilities/spacing';
-@import 'utilities/border';
-@import 'utilities/flex';
-@import 'utilities/display';
+// *-* generic *-*
+//	 	> Resets, box-sizing, initial font declaration etc
+@import 'generic/generic';
 
-body{
-	@include media('mobile-only') {
-		background-color:red;
-	}
-	@include media('tablet') {
-		background-color:blue;
-	}
-	@include media('tablet-only') {
-		background-color:green;
-	}
-	@include media('desktop') {
-		background-color:purple;
-	}
-	@include media('large-desktop') {
-		background-color:red;
-	}
-	@include media(320px, 'max') {
-		background-color:pink;
-	}
-}
+// *-* elements *-*
+// 		> Defaults for things like buttons and lists which are branded to the site
+@import 'elements/elements';
 
+// *-* objects *-*
+//		> Objects such as cards, containers or media items - things that will be re-used often
+@import 'objects/objects';
+
+// *-* components *-*
+//		> Specific components that don't fit into an object, like nav and layouts
+//		> Most work will be stored here when not being reused in multiple places
+@import 'components/components';
+
+// *-* utilities *-*
+//		> Overrides and helper classes !important is ok here and often needed
+@import 'utilities/utilities';
